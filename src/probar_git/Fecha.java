@@ -1,5 +1,7 @@
 package probar_git;
 
+import java.time.LocalDate;
+
 public class Fecha {
     //atributos
     private int dia;
@@ -12,10 +14,17 @@ public class Fecha {
         this.mes = mes;
         this.año = año;
     }
+    
+    public Fecha(){
+        LocalDate hoy=LocalDate.now();
+        dia=hoy.getDayOfMonth();
+        mes=hoy.getMonthValue();
+        año=hoy.getYear();
+    }
 
     @Override
     public String toString() {
-        return "Fecha{" + "dia=" + dia + ", mes=" + mes + ", a\u00f1o=" + año + '}';
+        return dia+"/"+mes+"/"+año;
     }
         
 }
